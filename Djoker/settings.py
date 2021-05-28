@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "dze5897ha8rbgeh98a7gbeige87eh85yinSGRG4WWRGRde8ghet85hy8eghhadw23223rr3AEFEGe"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.environ.get('DEBUG', default=0))
+DEBUG = int(os.environ.get('DEBUG', default=1))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', '192.168.43.101']
 
 
 # Application definition
@@ -126,6 +126,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
-CORS_ALLOWED_ORIGINS = []
+STATIC_URL = 'posts/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'posts/static/')
+MEDIA_URL = 'posts/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'posts/media/')
+
+CORS_ORIGIN_ALLOW_ALL = True
